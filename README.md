@@ -1,75 +1,83 @@
-# CropCareAI - Plant Disease Recognition System
+# 🌿 CropCareAI: Plant Disease Recognition System
 
-[![GitHub stars](https://img.shields.io/github/stars/RajaMahanty/crop-care-ai?style=social)](https://github.com/RajaMahanty/crop-care-ai/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/RajaMahanty/crop-care-ai?style=social)](https://github.com/RajaMahanty/crop-care-ai/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/RajaMahanty/crop-care-ai)](https://github.com/RajaMahanty/crop-care-ai/issues)
-[![GitHub license](https://img.shields.io/github/license/RajaMahanty/crop-care-ai)](https://github.com/RajaMahanty/crop-care-ai/blob/main/LICENSE)
+<div align="center">
 
-A deep learning-based web application that helps identify plant diseases through image analysis, assisting farmers and agricultural professionals in maintaining crop health.
+![CropCareAI Banner](home_page.jpg)
 
-## 🌟 Features
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.17.0-orange)](https://www.tensorflow.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.39.0-red)](https://streamlit.io/)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-- **Real-time Disease Detection**: Upload plant images and get instant disease identification
-- **Comprehensive Analysis**: Detailed information about detected diseases and recommended treatments
-- **User-friendly Interface**: Intuitive web interface built with Streamlit
-- **High Accuracy**: Powered by a trained deep learning model
-- **Multiple Plant Support**: Can identify diseases in various plants including:
-  - Apple
-  - Blueberry
-  - Cherry
-  - Corn (Maize)
-  - Grape
-  - Orange
-  - Peach
-  - Pepper
-  - Potato
-  - Raspberry
-  - Soybean
-  - Squash
-  - Strawberry
-  - Tomato
+</div>
 
-## 📊 Model Performance & Analytics
+## 📋 Overview
 
-### Model Metrics
+CropCareAI is an advanced plant disease recognition system that leverages deep learning to identify various plant diseases from images. This tool helps farmers, gardeners, and agricultural professionals quickly detect and address plant health issues, contributing to better crop management and yield optimization.
 
-- **Training Accuracy**: 98.5%
-- **Validation Accuracy**: 96.2%
-- **Test Accuracy**: 95.8%
-- **Average Inference Time**: 0.8 seconds per image
+## ✨ Features
 
-### Performance Charts
+<details>
+<summary>🔍 Click to expand features</summary>
 
-```
-Training History:
-├── Accuracy Plot
-│   ├── Training Accuracy: 98.5%
-│   └── Validation Accuracy: 96.2%
-├── Loss Plot
-│   ├── Training Loss: 0.045
-│   └── Validation Loss: 0.082
-└── Confusion Matrix
-    └── Overall Accuracy: 95.8%
+### Core Features
+
+```mermaid
+graph TD
+    A[CropCareAI] --> B[Image Analysis]
+    A --> C[Disease Detection]
+    A --> D[Treatment Recommendations]
+    B --> E[Real-time Processing]
+    C --> F[38 Disease Classes]
+    D --> G[Detailed Reports]
 ```
 
-### Disease Distribution
+### Supported Plants
 
+```mermaid
+mindmap
+  root((CropCareAI))
+    Apple
+      Scab
+      Black Rot
+      Rust
+    Blueberry
+      Healthy
+    Cherry
+      Powdery Mildew
+    Corn
+      Leaf Spot
+      Rust
+    Grape
+      Black Rot
+      Leaf Blight
+    Tomato
+      Early Blight
+      Late Blight
+      Leaf Mold
 ```
-Dataset Statistics:
-├── Total Images: 87,000
-├── Training Set: 70,295 (80%)
-├── Validation Set: 17,572 (20%)
-└── Test Set: 33 (for final evaluation)
-```
+
+</details>
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Python 3.8 or higher
-- pip (Python package installer)
+| Requirement | Version |
+| ----------- | ------- |
+| Python      | 3.8+    |
+| pip         | Latest  |
+| RAM         | 8GB+    |
+| Storage     | 1GB+    |
 
 ### Installation
+
+```mermaid
+graph LR
+    A[Clone Repo] --> B[Install Dependencies]
+    B --> C[Run Application]
+    C --> D[Start Analysis]
+```
 
 1. Clone the repository:
 
@@ -78,7 +86,7 @@ git clone https://github.com/RajaMahanty/crop-care-ai.git
 cd crop-care-ai
 ```
 
-2. Install the required dependencies:
+2. Install required dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -90,142 +98,135 @@ pip install -r requirements.txt
 streamlit run main.py
 ```
 
-## 💻 Usage
+## 🎯 Usage
 
-1. Launch the application using the command above
-2. Navigate to the "Disease Recognition" section in the sidebar
-3. Upload an image of a plant leaf
-4. Click "Predict" to get the disease analysis
-5. View the results, including:
-   - Disease identification
-   - Disease information
-   - Recommended treatment options
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant A as App
+    participant M as Model
 
-### Example Results
-
-```
-Prediction Output:
-├── Disease Name: Tomato___Early_blight
-├── Confidence Score: 97.8%
-├── Disease Information
-│   ├── Symptoms: Dark spots with concentric rings
-│   ├── Affected Areas: Leaves, stems, and fruits
-│   └── Severity: Moderate
-└── Treatment Options
-    ├── Chemical: Fungicide application
-    ├── Cultural: Proper spacing and pruning
-    └── Prevention: Regular monitoring
+    U->>A: Upload Image
+    A->>M: Process Image
+    M->>A: Return Prediction
+    A->>U: Show Results
 ```
 
-## 📊 Model Details
+## 📊 Model Performance
 
-### Architecture
+### Accuracy Metrics
 
-```
-Model Structure:
-├── Input Layer: (128, 128, 3)
-├── Convolutional Layers
-│   ├── Conv2D (32 filters)
-│   ├── Conv2D (64 filters)
-│   └── Conv2D (128 filters)
-├── Pooling Layers
-├── Dense Layers
-└── Output Layer: 38 classes
+```mermaid
+pie title Model Accuracy Distribution
+    "Training" : 98.5
+    "Validation" : 96.2
+    "Test" : 95.8
 ```
 
-- **Architecture**: Deep Learning model built with TensorFlow/Keras
-- **Dataset**: Trained on approximately 87,000 RGB images
-- **Categories**: 38 different classes of plant diseases and healthy conditions
-- **Accuracy**: High-precision disease detection
+### Performance Statistics
+
+| Metric              | Value |
+| ------------------- | ----- |
+| Training Accuracy   | 98.5% |
+| Validation Accuracy | 96.2% |
+| Test Accuracy       | 95.8% |
+| Inference Time      | 0.8s  |
+| Model Size          | 90MB  |
 
 ## 🛠️ Technical Stack
 
-- **Frontend**: Streamlit
-- **Backend**: Python
-- **Deep Learning**: TensorFlow/Keras
-- **Image Processing**: OpenCV, Pillow
-- **Data Processing**: NumPy, Pandas
-- **Visualization**: Matplotlib, Plotly
-- **Model Training**: TensorBoard for monitoring
-
-## 📝 Project Structure
-
+```mermaid
+graph TB
+    subgraph Frontend
+        A[Streamlit]
+    end
+    subgraph Backend
+        B[Python]
+    end
+    subgraph Deep Learning
+        C[TensorFlow/Keras]
+    end
+    subgraph Processing
+        D[OpenCV]
+        E[Pillow]
+        F[NumPy]
+        G[Pandas]
+    end
+    subgraph Visualization
+        H[Matplotlib]
+        I[Plotly]
+    end
 ```
-crop-care-ai/
-├── main.py                 # Main application file
-├── requirements.txt        # Project dependencies
-├── trained_plant_disease_model.keras  # Trained model
-├── develop.ipynb          # Development notebook
-├── training_hist.json     # Training history data
-└── home_page.jpg          # Homepage image
+
+## 📚 Dataset Information
+
+### Dataset Distribution
+
+```mermaid
+pie title Dataset Split
+    "Training" : 70295
+    "Validation" : 17572
+    "Test" : 33
 ```
 
-## 📈 Performance Monitoring
+### Dataset Statistics
 
-### Training Metrics
+| Category          | Count  | Percentage |
+| ----------------- | ------ | ---------- |
+| Training Images   | 70,295 | 80%        |
+| Validation Images | 17,572 | 20%        |
+| Test Images       | 33     | <1%        |
+| Total Images      | 87,900 | 100%       |
 
-- **Learning Rate**: 0.001
-- **Batch Size**: 32
-- **Epochs**: 50
-- **Optimizer**: Adam
-- **Loss Function**: Categorical Crossentropy
+## 🔄 Future Enhancements
 
-### Model Evaluation
-
-```
-Evaluation Metrics:
-├── Precision: 0.96
-├── Recall: 0.95
-├── F1-Score: 0.95
-└── ROC-AUC: 0.98
+```mermaid
+gantt
+    title Future Development Roadmap
+    dateFormat  YYYY-MM-DD
+    section Phase 1
+    Video Analysis    :2024-03-01, 30d
+    Mobile App       :2024-04-01, 45d
+    section Phase 2
+    Weather Integration :2024-05-15, 30d
+    Multi-language    :2024-06-15, 30d
 ```
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+### Development Workflow
 
-### Development Guidelines
+```mermaid
+graph LR
+    A[Fork Repo] --> B[Create Branch]
+    B --> C[Make Changes]
+    C --> D[Test Changes]
+    D --> E[Create PR]
+    E --> F[Review]
+    F --> G[Merge]
+```
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+## 📝 License
 
-### Pull Request Process
-
-1. Update the README.md with details of changes if needed
-2. Update the requirements.txt if you add new dependencies
-3. The PR will be merged once you have the sign-off of at least one other developer
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/RajaMahanty/crop-care-ai/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 🙏 Acknowledgments
 
-- Dataset sourced from PlantVillage
-- Built with Streamlit and TensorFlow
-- Special thanks to all contributors and the open-source community
+```mermaid
+graph LR
+    A[CropCareAI] --> B[PlantVillage Dataset]
+    A --> C[Streamlit]
+    A --> D[TensorFlow]
+    A --> E[Open Source Community]
+```
 
 ## 📧 Contact
 
-- GitHub Issues: [Create an issue](https://github.com/RajaMahanty/crop-care-ai/issues)
+- GitHub Issues: Create an issue
 - Repository: [crop-care-ai](https://github.com/RajaMahanty/crop-care-ai)
 
-## 🔄 Future Enhancements
+---
 
-- [ ] Real-time video analysis
-- [ ] Mobile application development
-- [ ] Additional plant species support
-- [ ] Integration with weather data
-- [ ] Automated treatment recommendations
-- [ ] Multi-language support
-
-## 📊 Repository Statistics
-
-- **Language**: Python (100%)
-- **Stars**: [![GitHub stars](https://img.shields.io/github/stars/RajaMahanty/crop-care-ai?style=social)](https://github.com/RajaMahanty/crop-care-ai/stargazers)
-- **Forks**: [![GitHub forks](https://img.shields.io/github/forks/RajaMahanty/crop-care-ai?style=social)](https://github.com/RajaMahanty/crop-care-ai/network/members)
-- **Issues**: [![GitHub issues](https://img.shields.io/github/issues/RajaMahanty/crop-care-ai)](https://github.com/RajaMahanty/crop-care-ai/issues)
-- **License**: [![GitHub license](https://img.shields.io/github/license/RajaMahanty/crop-care-ai)](https://github.com/RajaMahanty/crop-care-ai/blob/main/LICENSE)
+<div align="center">
+Made with ❤️ for better agriculture
+</div>
