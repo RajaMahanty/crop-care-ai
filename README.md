@@ -32,29 +32,63 @@ graph TD
     D --> G[Detailed Reports]
 ```
 
-### Supported Plants
+### Supported Plants and Diseases
 
 ```mermaid
 mindmap
   root((CropCareAI))
     Apple
-      Scab
+      Apple Scab
       Black Rot
-      Rust
+      Cedar Apple Rust
+      Healthy
     Blueberry
       Healthy
     Cherry
       Powdery Mildew
+      Healthy
     Corn
-      Leaf Spot
-      Rust
+      Cercospora Leaf Spot
+      Common Rust
+      Northern Leaf Blight
+      Healthy
     Grape
       Black Rot
+      Esca
       Leaf Blight
+      Healthy
+    Orange
+      Citrus Greening
+    Peach
+      Bacterial Spot
+      Healthy
+    Pepper
+      Bacterial Spot
+      Healthy
+    Potato
+      Early Blight
+      Late Blight
+      Healthy
+    Raspberry
+      Healthy
+    Soybean
+      Healthy
+    Squash
+      Powdery Mildew
+    Strawberry
+      Leaf Scorch
+      Healthy
     Tomato
+      Bacterial Spot
       Early Blight
       Late Blight
       Leaf Mold
+      Septoria Leaf Spot
+      Spider Mites
+      Target Spot
+      Yellow Leaf Curl Virus
+      Mosaic Virus
+      Healthy
 ```
 
 </details>
@@ -63,12 +97,15 @@ mindmap
 
 ### Prerequisites
 
-| Requirement | Version |
-| ----------- | ------- |
-| Python      | 3.8+    |
-| pip         | Latest  |
-| RAM         | 8GB+    |
-| Storage     | 1GB+    |
+```mermaid
+graph LR
+    subgraph System Requirements
+        A[Python 3.8+] --> D[Application]
+        B[pip Latest] --> D
+        C[8GB+ RAM] --> D
+        E[1GB+ Storage] --> D
+    end
+```
 
 ### Installation
 
@@ -109,8 +146,20 @@ sequenceDiagram
     U->>A: Upload Image
     A->>M: Process Image
     M->>A: Return Prediction
-    A->>U: Show Results
+    A->>U: Show Results & Treatment
 ```
+
+### Application Flow
+
+1. Launch the application
+2. Navigate to "Disease Recognition" in the sidebar
+3. Upload a plant leaf image
+4. Click "Show Image" to preview
+5. Click "Predict" to analyze
+6. View results including:
+   - Disease identification
+   - Disease information
+   - Recommended treatment options
 
 ## 📊 Model Performance
 
@@ -125,13 +174,17 @@ pie title Model Accuracy Distribution
 
 ### Performance Statistics
 
-| Metric              | Value |
-| ------------------- | ----- |
-| Training Accuracy   | 98.5% |
-| Validation Accuracy | 96.2% |
-| Test Accuracy       | 95.8% |
-| Inference Time      | 0.8s  |
-| Model Size          | 90MB  |
+```mermaid
+graph LR
+    subgraph Model Metrics
+        A[Training Accuracy<br>98.5%] --> D[Model]
+        B[Validation Accuracy<br>96.2%] --> D
+        C[Test Accuracy<br>95.8%] --> D
+        E[Inference Time<br>0.8s] --> D
+        F[Model Size<br>90MB] --> D
+        G[Input Size<br>128x128] --> D
+    end
+```
 
 ## 🛠️ Technical Stack
 
@@ -171,12 +224,16 @@ pie title Dataset Split
 
 ### Dataset Statistics
 
-| Category          | Count  | Percentage |
-| ----------------- | ------ | ---------- |
-| Training Images   | 70,295 | 80%        |
-| Validation Images | 17,572 | 20%        |
-| Test Images       | 33     | <1%        |
-| Total Images      | 87,900 | 100%       |
+```mermaid
+graph LR
+    subgraph Dataset Overview
+        A[Training<br>70,295 Images] --> D[Total: 87,900]
+        B[Validation<br>17,572 Images] --> D
+        C[Test<br>33 Images] --> D
+        E[38 Disease Classes] --> D
+        F[14 Plant Species] --> D
+    end
+```
 
 ## 🔄 Future Enhancements
 
